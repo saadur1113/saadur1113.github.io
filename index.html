@@ -3,211 +3,98 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Saad Rehman — Software Engineer</title>
-  <meta name="description" content="Personal homepage of Saad Rehman — software engineer building clean, reliable products.">
-  <meta name="theme-color" content="#0b1020">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236366f1'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'>S</text></svg>">
+  <title>Saad Ur Rehman — Computer Science Researcher</title>
+  <meta name="description" content="Saad Ur Rehman — MS Computer Science student and researcher at the University of Cincinnati working on multimodal RAG, LLM evaluation and scientific knowledge extraction.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f8fc;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --muted: #55607a;
-      --border: #e3e7f1;
-      --accent: #4f46e5;
-      --accent-2: #06b6d4;
-      --glow: rgba(79, 70, 229, .14);
-      --shadow: 0 10px 30px -12px rgba(15, 23, 42, .15);
-      --radius: 16px;
-    }
-    :root[data-theme="dark"] {
-      --bg: #0b1020;
-      --surface: #121933;
-      --text: #e8ecf8;
-      --muted: #94a0c0;
-      --border: #222b4d;
-      --accent: #818cf8;
-      --accent-2: #22d3ee;
-      --glow: rgba(129, 140, 248, .18);
-      --shadow: 0 10px 30px -12px rgba(0, 0, 0, .6);
+      --bg: #ffffff;
+      --alt: #f6f7f9;
+      --text: #1b2430;
+      --muted: #5b6676;
+      --line: #e4e7ec;
+      --accent: #1f4e79;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
     body {
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
+      color: var(--text); background: var(--bg); line-height: 1.7; font-size: 16px;
       -webkit-font-smoothing: antialiased;
-      transition: background .3s, color .3s;
     }
-    a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
 
-    /* Background glow */
-    .bg-glow {
-      position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      background:
-        radial-gradient(600px 400px at 85% -5%, var(--glow), transparent 70%),
-        radial-gradient(500px 400px at 5% 30%, rgba(6, 182, 212, .08), transparent 70%);
-    }
+    header.nav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { font-weight: 700; color: var(--text); }
+    .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 24px; list-style: none; }
+    .nav ul a { color: var(--muted); font-size: .9rem; }
+    .nav ul a:hover { color: var(--accent); text-decoration: none; }
 
-    /* Nav */
-    header.nav {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(14px);
-      background: color-mix(in srgb, var(--bg) 78%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { font-weight: 800; letter-spacing: -.02em; font-size: 1.15rem; }
-    .logo span { color: var(--accent); }
-    .nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
-    .nav ul a { font-size: .92rem; font-weight: 500; color: var(--muted); transition: color .2s; }
-    .nav ul a:hover { color: var(--text); }
-    .icon-btn {
-      width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border);
-      background: var(--surface); color: var(--text); cursor: pointer; font-size: 1rem;
-      display: grid; place-items: center; transition: transform .2s, border-color .2s;
-    }
-    .icon-btn:hover { transform: translateY(-1px); border-color: var(--accent); }
+    .hero { padding: 80px 0 64px; }
+    .hero .role { color: var(--accent); font-weight: 600; font-size: .95rem; margin-bottom: 10px; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -.02em; margin-bottom: 18px; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 640px; }
+    .hero .meta { margin-top: 14px; font-size: .95rem; }
+    .actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 10px 22px; border-radius: 6px; font-weight: 600; font-size: .92rem; border: 1px solid var(--accent); }
+    .btn:hover { text-decoration: none; }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.primary:hover { background: #173b5c; }
+    .btn.ghost { color: var(--accent); background: #fff; }
+    .btn.ghost:hover { background: var(--alt); }
 
-    /* Hero */
-    .hero { padding: 110px 0 90px; }
-    .hero .grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
-      border: 1px solid var(--border); border-radius: 999px; background: var(--surface);
-      font-size: .82rem; color: var(--muted); font-weight: 500;
-    }
-    .badge i { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34, 197, 94, .2); }
-    h1 {
-      font-size: clamp(2.4rem, 5.5vw, 4rem); line-height: 1.08; letter-spacing: -.035em;
-      font-weight: 800; margin: 22px 0 20px;
-    }
-    .grad {
-      background: linear-gradient(120deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .lead { font-size: 1.15rem; color: var(--muted); max-width: 560px; }
-    .cta { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
-    .btn {
-      padding: 13px 24px; border-radius: 12px; font-weight: 600; font-size: .95rem;
-      border: 1px solid var(--border); background: var(--surface); transition: all .2s; display: inline-block;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-    .btn.primary {
-      background: linear-gradient(120deg, var(--accent), #6d63f5); color: #fff; border-color: transparent;
-      box-shadow: 0 8px 24px -8px var(--accent);
-    }
+    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    section.alt { background: var(--alt); }
+    h2 { font-size: 1.5rem; letter-spacing: -.01em; margin-bottom: 24px; }
+    section p { color: var(--muted); margin-bottom: 14px; }
+    section p:last-child { margin-bottom: 0; }
 
-    .card-code {
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-      box-shadow: var(--shadow); overflow: hidden;
-      font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .82rem;
-    }
-    .card-code .bar { display: flex; gap: 7px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
-    .card-code .bar i { width: 11px; height: 11px; border-radius: 50%; background: var(--border); }
-    .card-code .bar i:nth-child(1) { background: #ff5f57; }
-    .card-code .bar i:nth-child(2) { background: #febc2e; }
-    .card-code .bar i:nth-child(3) { background: #28c840; }
-    .card-code pre { padding: 20px; line-height: 1.8; overflow-x: auto; color: var(--muted); }
-    .k { color: var(--accent); } .s { color: #10b981; } .c { opacity: .6; }
+    .item { margin-bottom: 32px; }
+    .item:last-child { margin-bottom: 0; }
+    .item-head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+    .item h3 { font-size: 1.05rem; line-height: 1.4; }
+    .item h3 small { font-weight: 400; color: var(--muted); font-size: inherit; }
+    .item .date { color: var(--muted); font-size: .88rem; white-space: nowrap; }
+    .item .org { color: var(--accent); font-size: .95rem; margin-bottom: 6px; }
+    .item .sub { color: var(--muted); font-size: .9rem; margin-bottom: 6px; }
+    .item ul { margin-left: 20px; color: var(--muted); font-size: .95rem; }
+    .item li { margin-bottom: 5px; }
+    .tag { display: inline-block; font-size: .8rem; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
 
-    /* Sections */
-    section { padding: 80px 0; }
-    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--accent); text-transform: uppercase; letter-spacing: .12em; }
-    h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); letter-spacing: -.025em; margin: 8px 0 14px; line-height: 1.2; }
-    .sub { color: var(--muted); max-width: 600px; margin-bottom: 40px; }
+    .skills dt { font-weight: 600; font-size: .95rem; margin-top: 16px; }
+    .skills dt:first-child { margin-top: 0; }
+    .skills dd { color: var(--muted); font-size: .95rem; }
 
-    /* About */
-    .about { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
-    .about p { color: var(--muted); margin-bottom: 16px; }
-    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
-    .stat b { display: block; font-size: 2rem; letter-spacing: -.03em; }
-    .stat span { color: var(--muted); font-size: .85rem; }
+    .contact p { max-width: 560px; }
 
-    /* Skills */
-    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
-    .chip {
-      padding: 9px 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border);
-      font-size: .9rem; font-weight: 500; transition: all .2s;
-    }
-    .chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    footer { padding: 28px 0 40px; text-align: center; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
 
-    /* Projects */
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
-    .project {
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 28px; display: flex; flex-direction: column; transition: all .25s; position: relative; overflow: hidden;
-    }
-    .project::before {
-      content: ''; position: absolute; inset: 0 0 auto 0; height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2)); opacity: 0; transition: opacity .25s;
-    }
-    .project:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--accent); }
-    .project:hover::before { opacity: 1; }
-    .project .ico { font-size: 1.6rem; margin-bottom: 14px; }
-    .project h3 { font-size: 1.15rem; margin-bottom: 8px; letter-spacing: -.01em; }
-    .project p { color: var(--muted); font-size: .94rem; flex: 1; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 14px; }
-    .tags span { font-family: 'JetBrains Mono', monospace; font-size: .74rem; padding: 3px 9px; border-radius: 6px; background: var(--glow); color: var(--accent); }
-    .more { font-weight: 600; font-size: .9rem; color: var(--accent); }
-
-    /* Timeline */
-    .timeline { border-left: 2px solid var(--border); padding-left: 30px; display: grid; gap: 34px; }
-    .job { position: relative; }
-    .job::before {
-      content: ''; position: absolute; left: -38px; top: 7px; width: 14px; height: 14px; border-radius: 50%;
-      background: var(--bg); border: 3px solid var(--accent);
-    }
-    .job .when { font-family: 'JetBrains Mono', monospace; font-size: .78rem; color: var(--muted); }
-    .job h3 { font-size: 1.1rem; margin: 4px 0; }
-    .job p { color: var(--muted); font-size: .95rem; }
-
-    /* Contact */
-    .contact {
-      text-align: center; background: var(--surface); border: 1px solid var(--border);
-      border-radius: 24px; padding: 70px 24px; position: relative; overflow: hidden;
-    }
-    .contact::before { content: ''; position: absolute; inset: 0; background: radial-gradient(400px 200px at 50% 0, var(--glow), transparent 70%); }
-    .contact > * { position: relative; }
-    .contact .sub { margin: 0 auto 30px; }
-    .contact .cta { justify-content: center; margin-top: 0; }
-
-    footer { padding: 36px 0 50px; text-align: center; color: var(--muted); font-size: .86rem; }
-
-    /* Reveal */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
-
-    @media (max-width: 820px) {
-      .hero .grid, .about { grid-template-columns: 1fr; }
-      .hero { padding: 70px 0 50px; }
-      .nav ul li:not(:last-child) { display: none; }
-      section { padding: 56px 0; }
+    @media (max-width: 640px) {
+      .nav ul { display: none; }
+      .hero { padding: 56px 0 44px; }
+      section { padding: 44px 0; }
+      .item-head { flex-direction: column; gap: 2px; }
     }
   </style>
 </head>
 <body>
-  <div class="bg-glow"></div>
-
   <header class="nav">
     <div class="wrap">
-      <a href="#top" class="logo">saad<span>.</span></a>
+      <a href="#top" class="brand">Saad Ur Rehman</a>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><button class="icon-btn" id="theme" aria-label="Toggle theme">🌙</button></li>
         </ul>
       </nav>
     </div>
@@ -215,153 +102,163 @@
 
   <main id="top">
     <div class="hero">
-      <div class="wrap grid">
-        <div class="reveal">
-          <span class="badge"><i></i> Available for new opportunities</span>
-          <h1>Hi, I'm Saad.<br>I build <span class="grad">reliable, elegant</span> software.</h1>
-          <p class="lead">Software engineer focused on crafting fast, accessible and well-designed products — from clean interfaces to the systems that power them.</p>
-          <div class="cta">
-            <a href="#projects" class="btn primary">View my work</a>
-            <a href="#contact" class="btn">Get in touch</a>
-          </div>
-        </div>
-        <div class="card-code reveal" aria-hidden="true">
-          <div class="bar"><i></i><i></i><i></i></div>
-<pre><span class="c">// saad.config.js</span>
-<span class="k">const</span> saad = {
-  role:    <span class="s">"Software Engineer"</span>,
-  focus:   [<span class="s">"Web"</span>, <span class="s">"Backend"</span>, <span class="s">"UX"</span>],
-  values:  [<span class="s">"Quality"</span>, <span class="s">"Clarity"</span>],
-  coffee:  <span class="k">true</span>,
-  openTo:  <span class="s">"Interesting problems"</span>
-};</pre>
+      <div class="wrap">
+        <div class="role">MS Computer Science · University of Cincinnati</div>
+        <h1>Saad Ur Rehman</h1>
+        <p>I research multimodal and language models, with a focus on retrieval-augmented generation, model evaluation, and trustworthy scientific information extraction.</p>
+        <p class="meta">Cincinnati, OH</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:urrehmsd@mail.uc.edu">Email me</a>
+          <a class="btn ghost" href="#publications">View publications</a>
+          <a class="btn ghost" href="https://github.com/saadur1113" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </div>
 
-    <section id="about">
-      <div class="wrap about">
-        <div class="reveal">
-          <div class="eyebrow">01 / About</div>
-          <h2>Turning ideas into polished products</h2>
-          <p>I'm a software engineer who cares about the details — readable code, thoughtful design and measurable results. I enjoy owning features end to end, from the first sketch to production.</p>
-          <p>Outside of work you'll find me learning new technologies, contributing to side projects and sharing what I learn along the way.</p>
-        </div>
-        <div class="stats reveal">
-          <div class="stat"><b>5+</b><span>Years experience</span></div>
-          <div class="stat"><b>30+</b><span>Projects shipped</span></div>
-          <div class="stat"><b>10+</b><span>Technologies</span></div>
-          <div class="stat"><b>100%</b><span>Commitment</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="wrap reveal">
-        <div class="eyebrow">02 / Skills</div>
-        <h2>Tools I work with</h2>
-        <p class="sub">A toolkit built up across frontend, backend and everything in between.</p>
-        <div class="chips">
-          <span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Python</span>
-          <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">HTML &amp; CSS</span>
-          <span class="chip">SQL</span><span class="chip">REST &amp; GraphQL</span><span class="chip">Git &amp; GitHub</span>
-          <span class="chip">Docker</span><span class="chip">Cloud (AWS / GCP)</span><span class="chip">CI/CD</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
+    <section id="research">
       <div class="wrap">
-        <div class="reveal">
-          <div class="eyebrow">03 / Projects</div>
-          <h2>Selected work</h2>
-          <p class="sub">A few things I've built recently. Swap these for your own.</p>
+        <h2>Research Interests</h2>
+        <p>My research centers on analyzing multimodal and language models, and the metrics used to evaluate them, in order to understand what actually drives their behavior rather than what their scores suggest.</p>
+        <p>In applied settings, I have built LLM pipelines that extract findings from scientific literature into a knowledge graph, with a second model auditing the first for unsupported claims. In my current work I found that a widely used architectural choice causes retrieval-augmented models to largely disregard the evidence they retrieve, a failure invisible to standard benchmarks and one I established through ablation and weight analysis rather than aggregate metrics.</p>
+        <p>I want to continue this work by studying trustworthy scientific information extraction, including how to detect and attribute unsupported claims when multiple models verify each other, what makes LLMs reliable enough for healthcare, and how vision-language models use visual evidence when they reason.</p>
+      </div>
+    </section>
+
+    <section id="publications" class="alt">
+      <div class="wrap">
+        <h2>Publications &amp; Manuscripts</h2>
+        <div class="item">
+          <span class="tag">Under review · WACV 2027</span>
+          <h3>Systematic Diagnosis of Retrieval Utilization Failure in Q-Former–Based Multimodal RAG for Radiology Report Generation</h3>
+          <div class="sub">Saad Ur Rehman, Vikram Ravindra</div>
+          <p>Identified that the Q-Former's fixed 32-query bottleneck fundamentally prevents retrieval utilization in vision-language RAG systems, demonstrated via decoder ablation, weight analysis, and a novel content-ablation methodology showing 92.5% output similarity between medically relevant and irrelevant retrieved context.</p>
         </div>
-        <div class="projects">
-          <a class="project reveal" href="https://github.com/saadur1113" target="_blank" rel="noopener">
-            <div class="ico">🚀</div><h3>Project One</h3>
-            <p>A short description of what this project does, the problem it solves and the impact it had.</p>
-            <div class="tags"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div>
-            <span class="more">View project →</span>
-          </a>
-          <a class="project reveal" href="https://github.com/saadur1113" target="_blank" rel="noopener">
-            <div class="ico">📊</div><h3>Project Two</h3>
-            <p>A data-driven dashboard that turns raw numbers into clear, actionable insights for teams.</p>
-            <div class="tags"><span>Python</span><span>Pandas</span><span>D3</span></div>
-            <span class="more">View project →</span>
-          </a>
-          <a class="project reveal" href="https://github.com/saadur1113" target="_blank" rel="noopener">
-            <div class="ico">🛠️</div><h3>Project Three</h3>
-            <p>An open-source developer tool that automates a tedious workflow and saves hours every week.</p>
-            <div class="tags"><span>TypeScript</span><span>CLI</span><span>Docker</span></div>
-            <span class="more">View project →</span>
-          </a>
+        <div class="item">
+          <span class="tag">In preparation · target NAACL 2027</span>
+          <h3>Generalizing Retrieval-Faithfulness Evaluation Across Multimodal and Text-Only RAG Systems <small>(working title)</small></h3>
+          <div class="sub">Saad Ur Rehman, Vikram Ravindra</div>
+          <p>Extends the content-ablation and length-controlled evaluation methodologies to text-only and cross-domain RAG pipelines, aiming to establish architecture-agnostic diagnostics for whether a generation model is actually grounded in retrieved evidence.</p>
         </div>
       </div>
     </section>
 
     <section id="experience">
       <div class="wrap">
-        <div class="reveal">
-          <div class="eyebrow">04 / Experience</div>
-          <h2>Where I've worked</h2>
-          <p class="sub">A brief timeline of my professional journey.</p>
+        <h2>Experience</h2>
+
+        <div class="item">
+          <div class="item-head"><h3>Graduate Research Assistant — AI &amp; First-Principles Modeling for Surface Cleaning</h3><span class="date">Sept 2026 – Present</span></div>
+          <div class="org">P&amp;G Digital Accelerator, University of Cincinnati</div>
+          <ul>
+            <li>Building directional first-principles Python calculators for friction, wetting and release, contact and shear, and soil removal, and exploring LLM-assisted approaches to model interpretation and documentation.</li>
+            <li>Developing a reusable model library and workflow to accelerate calculator development and cross-team reuse.</li>
+            <li>Modeling fluid transport in nonwoven substrates: saturation behavior, wicking profiles, capillary uptake and liquid release.</li>
+            <li>Prototyping dashboards and web visualizations for non-modeling stakeholders; running DOE-style simulations to identify key drivers of consumer effort and cleaning outcome.</li>
+          </ul>
         </div>
-        <div class="timeline">
-          <div class="job reveal"><div class="when">2023 — Present</div><h3>Software Engineer · Company Name</h3><p>Lead development of customer-facing features, improve performance and mentor teammates.</p></div>
-          <div class="job reveal"><div class="when">2021 — 2023</div><h3>Junior Developer · Company Name</h3><p>Built and maintained web applications, wrote tests and shipped features in an agile team.</p></div>
-          <div class="job reveal"><div class="when">2017 — 2021</div><h3>B.S. Computer Science · University Name</h3><p>Studied algorithms, software engineering and systems design.</p></div>
+
+        <div class="item">
+          <div class="item-head"><h3>Research Assistant — LLM-Based Toxicology Knowledge Extraction (SysTox)</h3><span class="date">Aug 2025 – Aug 2026</span></div>
+          <div class="org">P&amp;G Digital Accelerator, University of Cincinnati</div>
+          <ul>
+            <li>Built a multi-model LLM extraction pipeline (Gemini, GPT-4, Claude) with a dual-LLM extractor–judge architecture and 32-concurrent async orchestration, achieving A-grade extraction quality across 25+ chemicals and 10,000+ scientific papers.</li>
+            <li>Constructed a 4,327-node, 12,261-edge toxicology knowledge graph with Bayesian confidence scoring and ontology cross-references to Gene Ontology, AOP-Wiki and PubChem, exported to 7 formats including Neo4j, JSON-LD and RDF.</li>
+            <li>Built a retrieval-augmented Q&amp;A system over a 335,000-record, 9,051-paper literature database.</li>
+            <li>Designed a chemical-pathway prediction framework combining ChemBERTa with an R-GCN over the knowledge graph; scaled the pipeline across a multi-node HPC cluster with P&amp;G's HPC team.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head"><h3>Graduate Researcher — Multimodal RAG for Radiology Report Generation</h3><span class="date">Jan 2025 – Present</span></div>
+          <div class="org">University of Cincinnati, under Prof. Vikram Ravindra</div>
+          <ul>
+            <li>Analyzed RAG for radiology report generation: 5 retrieval strategies across 3 hospital datasets (MIMIC-CXR, IU X-Ray, CheXpert Plus) with 6 decoder configurations and 4 training seeds.</li>
+            <li>Developed two novel evaluation methodologies, length-controlled evaluation and retrieval content ablation, generalizable to any RAG architecture.</li>
+            <li>Managed an end-to-end pipeline across 8 A100 GPUs with FAISS indexing, multi-seed training, and automated evaluation (BLEU-4, RadGraph F1, ROUGE).</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head"><h3>Software Engineer</h3><span class="date">July 2022 – Aug 2024</span></div>
+          <div class="org">10Pearls, Karachi, Pakistan</div>
+          <ul>
+            <li>Developed scalable backend solutions with .NET Core, C# and RESTful APIs for a U.S.-based pharmaceutical software provider, achieving a 70% improvement in task efficiency.</li>
+            <li>Designed AWS serverless, event-driven infrastructure (S3, SQS, SES, Lambda); built CI/CD pipelines via Azure DevOps and Docker for zero-downtime deployments.</li>
+            <li>Engineered a multi-tenant MongoDB system with a 90% configuration-driven architecture; added an xUnit framework, increasing test coverage by 40%.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head"><h3>Teaching Assistant</h3><span class="date">Aug 2020 – June 2021</span></div>
+          <div class="org">National University of Computer &amp; Emerging Sciences, Karachi, Pakistan</div>
+          <ul>
+            <li>Object-Oriented Programming: supported 100+ students with assignments and projects.</li>
+            <li>Database Systems: graded assignments for 50+ students and led weekly recitation sessions.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="education" class="alt">
       <div class="wrap">
-        <div class="contact reveal">
-          <div class="eyebrow">05 / Contact</div>
-          <h2>Let's build something great together</h2>
-          <p class="sub">Have a project in mind or just want to say hi? My inbox is always open.</p>
-          <div class="cta">
-            <a class="btn primary" href="https://github.com/saadur1113" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
+        <h2>Education</h2>
+        <div class="item">
+          <div class="item-head"><h3>M.S. Computer Science, University of Cincinnati</h3><span class="date">Aug 2024 – May 2027 (expected)</span></div>
+          <div class="sub">GPA 3.94 / 4.0 · Graduate Research Assistant, P&amp;G Digital Accelerator and Prof. Vikram Ravindra's Lab</div>
+        </div>
+        <div class="item">
+          <div class="item-head"><h3>B.S. Computer Science, National University of Computer &amp; Emerging Sciences</h3><span class="date">Aug 2018 – May 2022</span></div>
+          <div class="sub">Karachi, Pakistan · GPA 3.46 / 4.0</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Selected Earlier Projects</h2>
+        <div class="item">
+          <h3>Survey Analytics Tool with NLP <small>(2022)</small></h3>
+          <p>Full-stack survey platform with an ML-based sentiment analysis pipeline and a scalable relational schema for large-scale survey data. React.js, Node.js, Python, Scikit-learn.</p>
+        </div>
+        <div class="item">
+          <h3>Hand Gesture Recognition System <small>(2021)</small></h3>
+          <p>Real-time gesture recognition system for touchless human-computer interaction. Python, OpenCV, computer vision.</p>
+        </div>
+        <div class="item">
+          <h3>Cancer Gene Detection <small>(2021)</small></h3>
+          <p>Genetic-algorithm-based approach for detecting cancer-associated genes. Python.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="alt">
+      <div class="wrap">
+        <h2>Technical Skills</h2>
+        <dl class="skills">
+          <dt>Programming Languages</dt><dd>Python, C#, C/C++, JavaScript, TypeScript, SQL, Bash, R</dd>
+          <dt>AI &amp; LLM</dt><dd>LLM orchestration, agentic AI, RAG systems, LangChain/LangGraph, MCP, fine-tuning, Anthropic/OpenAI/Gemini APIs, prompt engineering</dd>
+          <dt>Machine Learning &amp; Deep Learning</dt><dd>PyTorch, TensorFlow, Hugging Face, Scikit-learn, SciPy, R-GCN, ChemBERTa, sentence-transformers, NumPy, Pandas, statistical modeling</dd>
+          <dt>Systems &amp; Infrastructure</dt><dd>Multi-GPU training (8× A100), FAISS vector indexing, async processing, HPC cluster jobs, AWS (S3, Lambda, SQS, SES), Docker, CI/CD</dd>
+          <dt>Physics-Informed Modeling</dt><dd>First-principles Python calculators, fluid transport in porous media, capillary uptake and wicking, DOE-style simulation</dd>
+          <dt>Frameworks &amp; Tools</dt><dd>Streamlit, Plotly, FastAPI, .NET Core, Angular, React.js, Pydantic, asyncio, pytest, Jupyter</dd>
+          <dt>Databases &amp; Knowledge Representation</dt><dd>Neo4j, MongoDB, PostgreSQL, SQLite, FAISS, ChromaDB, knowledge graphs, Gene Ontology, AOP framework</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>I'm happy to discuss research collaborations in trustworthy LLMs, RAG evaluation, and scientific information extraction.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:urrehmsd@mail.uc.edu">urrehmsd@mail.uc.edu</a>
+          <a class="btn ghost" href="https://github.com/saadur1113" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="wrap">© <span id="yr"></span> Saad Rehman · Built with care and hosted on GitHub Pages</div></footer>
-
-  <script>
-    (function () {
-      var root = document.documentElement, btn = document.getElementById('theme');
-      var saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) {}
-      var theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      function apply(t) {
-        root.setAttribute('data-theme', t);
-        btn.textContent = t === 'dark' ? '☀️' : '🌙';
-        document.querySelector('meta[name=theme-color]').content = t === 'dark' ? '#0b1020' : '#f7f8fc';
-      }
-      apply(theme);
-      btn.addEventListener('click', function () {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        apply(theme);
-        try { localStorage.setItem('theme', theme); } catch (e) {}
-      });
-
-      document.getElementById('yr').textContent = new Date().getFullYear();
-
-      var items = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (es) {
-          es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-        }, { threshold: .12 });
-        items.forEach(function (el) { io.observe(el); });
-      } else {
-        items.forEach(function (el) { el.classList.add('in'); });
-      }
-    })();
-  </script>
+  <footer><div class="wrap">© <span id="yr"></span> Saad Ur Rehman</div></footer>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
